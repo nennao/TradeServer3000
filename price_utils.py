@@ -9,7 +9,7 @@ STOCKS = (
 def get_stock_prices():
     results = {}
     for s in STOCKS:
-        results[s] = compute_price()
+        results[s] = round(compute_price(), 3)
     return results
 
 
