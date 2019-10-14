@@ -10,7 +10,9 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return '<h1>Welcome to Trade Server 3000!</h1>'
+    endpoints = ['options', 'prices']
+    links = ''.join([f'<li><a href="/{i}">/{i}</a></li>' for i in endpoints])
+    return f'<h1>Welcome to TradeServer3000!</h1> <ul>{links}<ul>'
 
 
 @app.route("/prices", methods=["GET"])
